@@ -278,9 +278,9 @@ EOF
 
 
 
-# ping 10.10.60.1 to confirm intranet connected, if not open Anyconnect
+# ping 10.10.10.1 to confirm intranet connected, if not open Anyconnect
 
-ping -c 1 10.10.60.1 > /tmp/ping.$
+ping -c 1 10.10.10.1 > /tmp/ping.$
 
 	if [[ $? -ne 0 ]]; then
 osascript -e 'tell application "System Events" to display dialog "Please connect VPN or Ethernet and run this program again."'
