@@ -1,2 +1,2 @@
 # connectservers
-AppleScript and Bash script to mount servers based on hostname
+AppleScript-Bash script used to automatically mount servers based on specific variables such as hostname
