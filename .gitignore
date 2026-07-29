@@ -1,0 +1,4 @@
+.DS_Store
+
+# A user's real site file can contain internal network details.
+/sites.conf

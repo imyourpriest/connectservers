@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  shell:
+    name: Shell validation
+    runs-on: macos-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v6
+
+      - name: Check POSIX shell syntax
+        run: sh -n ConnectServers.sh tests/test_connectservers.sh
+
+      - name: Run behavior tests
+        run: ./tests/test_connectservers.sh
+
+      - name: Install ShellCheck
+        run: command -v shellcheck >/dev/null 2>&1 || brew install shellcheck
+
+      - name: Run ShellCheck
+        run: shellcheck ConnectServers.sh tests/test_connectservers.sh
